@@ -1,5 +1,9 @@
+using Dapper;
 using Drip.Data;
 using Drip.Services;
+
+// Tell Dapper how to handle DateOnly (PostgreSQL DATE type)
+SqlMapper.AddTypeHandler(new DateOnlyTypeHandler());
 
 var builder = WebApplication.CreateBuilder(args);
 
