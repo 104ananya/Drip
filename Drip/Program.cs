@@ -1,3 +1,6 @@
+using Drip.Data;
+using Drip.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<DapperContext>();
+builder.Services.AddScoped<IExpenseService, ExpenseService>(); // one instance per HTTP request
+
+// This tells .NET's Dependency Injection: "When any class asks for IExpenseService, give it an ExpenseService instance." The Controller never creates the service itself — DI hands it over automatically.
+
 
 var app = builder.Build();
 
