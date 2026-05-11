@@ -8,7 +8,7 @@ public class CreateExpenseDto
     public int? CategoryId { get; set; }
     public string? PaymentMethod { get; set; }
     public string? Description { get; set; }
-    public DateTime? ExpenseDate { get; set; }   // optional — defaults to today
+    public DateOnly? ExpenseDate { get; set; }   // optional — defaults to today
 }
 
 // "Data Transfer Object." It's a filter. You don't want clients to see or send every database column. DTOs control exactly what data enters and exits your API.

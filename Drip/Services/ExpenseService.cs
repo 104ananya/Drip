@@ -61,7 +61,7 @@ public class ExpenseService : IExpenseService
             dto.CategoryId,
             dto.PaymentMethod,
             dto.Description,
-            ExpenseDate = dto.ExpenseDate ?? DateTime.Today
+            ExpenseDate = dto.ExpenseDate ?? DateOnly.FromDateTime(DateTime.Today)
         });
 
         return expense;
@@ -86,7 +86,7 @@ public class ExpenseService : IExpenseService
             dto.CategoryId,
             dto.PaymentMethod,
             dto.Description,
-            ExpenseDate = dto.ExpenseDate ?? DateTime.Today
+            ExpenseDate = dto.ExpenseDate ?? DateOnly.FromDateTime(DateTime.Today)
         });
 
         return rowsAffected > 0; // true if expense was found and updated

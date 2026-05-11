@@ -10,7 +10,7 @@ public class Expense
     public int? CategoryId { get; set; }          // (?) nullable — category is optional
     public string? PaymentMethod { get; set; }    // (?) nullable — optional
     public string? Description { get; set; }      // (?) nullable — optional
-    public DateTime ExpenseDate { get; set; }
+    public DateOnly ExpenseDate { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
 }

@@ -10,6 +10,6 @@ public class ExpenseResponseDto
     public string? CategoryName { get; set; }     // from JOIN — friendly name instead of just ID
     public string? PaymentMethod { get; set; }
     public string? Description { get; set; }
-    public DateTime ExpenseDate { get; set; }
+    public DateOnly ExpenseDate { get; set; }
     public DateTime CreatedAt { get; set; }
 }
