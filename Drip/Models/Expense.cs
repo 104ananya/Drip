@@ -13,6 +13,10 @@ public class Expense
     public DateOnly ExpenseDate { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
+
+    // Navigation properties — EF Core uses these for JOINs
+    public User User { get; set; } = null!;        // the user who made this expense
+    public Category? Category { get; set; }         // the category (optional, so nullable)
 }
 
 // Note: This model is used internally in the API to represent expenses as they exist in the database.
