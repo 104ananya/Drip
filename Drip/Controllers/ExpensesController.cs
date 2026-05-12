@@ -6,7 +6,7 @@ namespace Drip.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]    // → /api/expenses
-public class ExpensesController : ControllerBase
+public class ExpensesController : ControllerBase        // INHERITANCE
 {
     private readonly IExpenseService _expenseService;
 
